@@ -1,0 +1,125 @@
+
+/* Navbar styling */
+.navbar {
+    transition: box-shadow 0.3s ease-in-out;
+}
+.navbar:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* H1 Section */
+.h1 {
+    margin: 100px;
+}
+
+.display-1 {
+    animation: fadeInSlideUp 2s ease-in-out;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.display-1:hover {
+    transform: scale(1.05);
+    color: #007bff;
+}
+
+/* Text below H1 */
+h4 {
+    animation: fadeInSlideUp 2s ease-in-out 1s;
+    font-weight: 300;
+    color: #6c757d;
+}
+
+/* Keyframes for H1 animation */
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Navbar animation on hover */
+.navbar-nav .nav-link {
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffeb3b;
+    background-color: #007bff;
+}
+
+/* Button custom styles and animations */
+.btn-custom {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-custom:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Ripple effect for button */
+.btn-custom:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transition: transform 0.5s;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.btn-custom:active:after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .h1 {
+        margin: 30px 20px;
+    }
+}
+
+/* Image Styling */
+.img-side {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.img-side:hover {
+    transform: scale(1.05);
+}
+
+/* Small text style */
+.small-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Footer styling */
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #dee2e6;
+}
+
+.footer p {
+    margin: 0;
+    color: #6c757d;
+}
