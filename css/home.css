@@ -64,7 +64,7 @@ h4 {
 }
 
 .btn-custom:hover {
-    background-color: #0056b3;
+    background-color: #ffffff;
     transform: scale(1.1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -72,6 +72,82 @@ h4 {
 /* Ripple effect for button */
 .btn-custom:after {
     content: '';
+    color: #fff;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
     position: absolute;
     top: 50%;
     left: 50%;

@@ -23,35 +23,39 @@ if (!$result) {
 
 <body class="container mt-5">
     <h1 class="mb-4">Detail Tugas</h1>
-    <table class="table table-striped table-hover">
-        <thead class="thead-light">
-            <tr>
-                <th>Nama Tugas</th>
-                <th>Deskripsi</th>
-                <th>Status</th>
-                <th>Aksi</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($result as $ts) : ?>
+    <?php if (mysqli_num_rows($result) > 0): ?>
+        <table class="table table-striped table-hover">
+            <thead class="thead-light">
                 <tr>
-                    <td><?php echo htmlspecialchars($ts['nama_tugas']); ?></td>
-                    <td><?php echo htmlspecialchars($ts['deskripsi']); ?></td>
-                    <td><?php echo htmlspecialchars($ts['status']); ?></td>
-                    <td>
-                        <a href="" type="button" class="btn btn-success btn-sm">
-                            <i class="fa fa-pencil"></i> Edit
-                        </a>
-                        <a href="" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data tersebut?');">
-                            <i class="fa fa-trash"></i> Hapus
-                        </a>
-                    </td>
+                    <th>Nama Tugas</th>
+                    <th>Deskripsi</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php foreach ($result as $data) : ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($data['nama_tugas']); ?></td>
+                        <td><?php echo htmlspecialchars($data['deskripsi']); ?></td>
+                        <td><?php echo htmlspecialchars($data['status']); ?></td>
+                        <td>
+                            <a href="edit.php?id_tugas=<?php echo $data['id_tugas']; ?>" class="btn btn-success btn-sm">
+                                <i class="fa fa-pencil"></i> Edit
+                            </a>
+                            <a href="delete.php?id_tugas=<?php echo $data['id_tugas']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data tersebut?');">
+                                <i class="fa fa-trash"></i> Hapus
+                            </a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <div class="alert alert-warning">Tidak ada tugas yang ditemukan.</div>
+    <?php endif; ?>
 
-    <a href="input.php"><button type="submit" class="btn btn-dark">Kembali</button></a>
+    <a href="input.php"><button type="button" class="btn btn-dark">Kembali</button></a>
 
     <!-- Include Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
